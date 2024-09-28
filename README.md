@@ -19,7 +19,7 @@
 </details>
 
 ## TRANKS DANIEL AND TEAM!!
----
+----
 ### **`👑 PROPIETARIO`**
 <a
 href="https://github.com/Jostin-444"><img src="https://github.com/Jostin-444.png" width="130" height="130" alt="Jostin"/></a>
