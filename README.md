@@ -5,7 +5,7 @@
 <img src= "https://qu.ax/AjSo.jpg" alt="NARUTO MD" width="720">
 </p>
 
-
+---
 ### **`TK HOST 📲`**
 <a href="https://dash.tk-joanhost.com"><img src="https://i.ibb.co/pr8TnWJ/SAVE-20240915-183758.jpg" height="125px"></a>
 
@@ -19,7 +19,7 @@
 </details>
 
 ## TRANKS DANIEL AND TEAM!!
-
+---
 ### **`👑 PROPIETARIO`**
 <a
 href="https://github.com/Jostin-444"><img src="https://github.com/Jostin-444.png" width="130" height="130" alt="Jostin"/></a>
