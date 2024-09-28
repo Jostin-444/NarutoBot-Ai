@@ -2,7 +2,7 @@
 
 <h1 align="center">
 <p>
-<img src= "https://qu.ax/AjSo.jpg" alt="BLACK MD" width="720">
+<img src= "https://qu.ax/AjSo.jpg" alt="NARUTO MD" width="720">
 </p>
 
 
