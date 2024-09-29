@@ -1,5 +1,5 @@
 {
-	"name": "Elaina Ai",
+	"name": "Naruto Ai",
 	"version": "6.0.0",
 	"description": "Simple WhatsApp Bot Multi Device",
 	"main": "starlights.js",
@@ -9,7 +9,7 @@
 		"plugins": "plugins"
 	},
 	"scripts": {
-		"start": "node elaina.js",
+		"start": "node naruto.js",
 		"test": "node test.js",
 		"test2": "nodemon index.js"
 	},
