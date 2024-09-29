@@ -23,7 +23,7 @@ async function displayImage() {
       console.error('Error displaying image:', error);
    }
 }
-say('NarutoBot Ai', {
+say('Elaina Ai', {
   font: 'chrome',
   align: 'center',
   gradient: ['red', 'magenta']
@@ -40,7 +40,7 @@ var isRunning = false
 async function start(files) {
   if (isRunning) return
   isRunning = true
-  
+
   for (const file of files) {
     const currentFilePath = new URL(import.meta.url).pathname
     let args = [join(__dirname, file), ...process.argv.slice(2)]
@@ -49,12 +49,12 @@ async function start(files) {
       align: 'center',
       gradient: ['red', 'magenta']
     })
-    
+
     setupMaster({
       exec: args[0],
       args: args.slice(1),
     })
-    
+
     let p = fork()
     p.on('message', data => {
       console.log('[RECEIVED]', data)
@@ -69,7 +69,7 @@ async function start(files) {
           break
       }
     })
-    
+
     p.on('exit', (_, code) => {
       isRunning = false
       console.error('Ocurrió un error inesperado:', code)
@@ -81,7 +81,7 @@ async function start(files) {
         start(files)
       })
     })
-    
+
     let opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
     if (!opts['test'])
       if (!rl.listenerCount()) rl.on('line', line => {
@@ -90,4 +90,4 @@ async function start(files) {
   }
 }
 
-start(['naruto.js'])
+start(['elaina.js'])
