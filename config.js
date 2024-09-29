@@ -9,7 +9,7 @@ import axios from 'axios'
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.owner = [
-  ['5493816457465', 'KenisawaDevolper', true]
+  ['50242073893', 'Jostin', true]
 ]
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
@@ -20,10 +20,10 @@ global.prems = []
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.packname = `[ Sticker Maker`
-global.author = '✓ Elaina Ai WhatsApp Bot ]'
-global.wait = '🐢 *Aɢᴜᴀʀᴅᴇ ᴜɴ ᴍᴏᴍᴇɴᴛᴏ, sᴏʏ ʟᴇɴᴛᴀ... ฅ^•ﻌ•^ฅ*'
-global.botname = '[ Elaina Ai WhatsApp Bot ]'
-global.textbot = `Powered By KenisawaDev`
+global.author = '✓ Naruto Ai WhatsApp Bot ]'
+global.wait = '🐢 *Aɢᴜᴀʀᴅᴇ ᴜɴ ᴍᴏᴍᴇɴᴛᴏ, sᴏʏ ʟᴇɴᴛ𝙾... ฅ^•ﻌ•^ฅ*'
+global.botname = '[ Naruto Ai WhatsApp Bot ]'
+global.textbot = `Powered By Jostin`
 global.listo = '*Aqui tiene ฅ^•ﻌ•^ฅ*'
 global.namechannel = 'Follow me 🌟🌱'
 
@@ -34,8 +34,8 @@ global.miniurl = fs.readFileSync('./storage/img/miniurl.jpg')
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.group = 'https://chat.whatsapp.com/BV24FuNPDPT1nXzwYNQtjz'
-global.canal = 'https://whatsapp.com/channel/0029Val7g9742DclUIeRhF2G'
+global.group = 'https://chat.whatsapp.com/JggKZT85bUt70InktjyxVW'
+global.canal = 'https://whatsapp.com/channel/0029VagOLYjJP217bgUkT00N'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
