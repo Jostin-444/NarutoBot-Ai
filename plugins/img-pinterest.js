@@ -1,7 +1,7 @@
 import Starlights from "@StarlightsTeam/Scraper"
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-if (!text) return m.reply('🚩 Ingresa el nombre de la imágen que estas buscando.\n\n`Ejemplo:`\n' + `> *${usedPrefix + command}* Elaina Icons`)
+if (!text) return m.reply('🚩 Ingresa el nombre de la imágen que estas buscando.\n\n`Ejemplo:`\n' + `> *${usedPrefix + command}* Naruto Icons`)
 await m.react('🕓')
 try {
 let { dl_url } = await Starlights.pinterest(text)
