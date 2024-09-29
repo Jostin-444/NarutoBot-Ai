@@ -90,4 +90,4 @@ async function start(files) {
   }
 }
 
-start(['elaina.js'])
+start(['naruto.js'])
