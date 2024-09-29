@@ -41,7 +41,7 @@
 		"@bochilteam/scraper": "^4.2.4",
 		"@whiskeysockets/baileys": "*",
 		"@ibaraki-douji/pixivts": "^2.4.1",
-		"@StarlightsTeam/Scraper": "github:Jostin-444/Jostin-444-Scraper",
+		"@Jostin-444/Scraper": "github:Jostin-444/Jostin-444-Scraper",
 		"awesome-phonenumber": "*",
 		"fluid-spotify.js": "*",
 		"axios": "*",
