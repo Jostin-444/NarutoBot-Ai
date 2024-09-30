@@ -7,11 +7,11 @@ let handler = async (m, { conn }) => {
 
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || ''
-  
+
+  await m.react('🕒')
   if (!mime.startsWith('image/')) {
-    return m.reply('🚩 Responde a una *Imagen.*')
+    return m.reply('Responde a una *Imagen.*')
   }
-  await m.react('🕓')
 
   let media = await q.download()
   let formData = new FormData()
@@ -23,25 +23,25 @@ let handler = async (m, { conn }) => {
     }
   })
 
+  await m.react('✅')
   if (api.data.data) {
-    let txt = `*乂  I B B  -  U P L O A D E R*\n\n`
-        txt += `  *» Titulo* : ${q.filename || 'x'}\n`
-        txt += `  *» Id* : ${api.data.data.id}\n`
-        txt += `  *» Enlace* : ${api.data.data.url}\n`
-        txt += `  *» Directo* : ${api.data.data.url_viewer}\n`
-        txt += `  *» Mime* : ${mime}\n`
-        txt += `  *» File* : ${q.filename || 'x.jpg'}\n`
-        txt += `  *» Extension* : ${api.data.data.image.extension}\n`
-        txt += `  *» Delete* : ${api.data.data.delete_url}\n\n`
-        txt += `🚩 *${textbot}*`
-    await conn.sendFile(m.chat, api.data.data.url, 'ibb.jpg', txt, m, null, rcanal)
-    await m.react('✅')
+    let txt = '`I B B  -  U P L O A D E R`\n\n'
+        txt += `*🔖 Titulo* : ${q.filename || 'x'}\n`
+        txt += `*🔖 Id* : ${api.data.data.id}\n`
+        txt += `*🔖 Enlace* : ${api.data.data.url}\n`
+        txt += `*🔖 Directo* : ${api.data.data.url_viewer}\n`
+        txt += `*🔖 Mime* : ${mime}\n`
+        txt += `*🔖 File* : ${q.filename || 'x.jpg'}\n`
+        txt += `*🔖 Extension* : ${api.data.data.image.extension}\n`
+        txt += `*🔖 Delete* : ${api.data.data.delete_url}\n\n`
+        txt += `© By: ム 𝐉𝐎𝐒𝐓𝐈𝐍-444 ㋰`
+    await conn.sendFile(m.chat, api.data.data.url, 'ibb.jpg', txt, m, null, fake)
   } else {
-    await m.react('✖️')
+    await m.react('✅')
   }
 }
-handler.tags = ['tools']
-handler.help = ['ibb']
-handler.command = /^(ibb)$/i
+handler.tags = ['convertir']
+handler.help = ['toibb']
+handler.command = /^(tourl2|toibb)$/i
 handler.register = true 
 export default handler
