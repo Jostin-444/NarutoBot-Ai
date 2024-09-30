@@ -1,15 +1,25 @@
 import fetch from 'node-fetch'
 
 export async function before(m, { conn }) {
-let img = await (await fetch(`https://i.pinimg.com/originals/79/69/bd/7969bd5faa4d1fa5193d0e30bb4e974c.jpg`)).buffer()
+let name = '𝑮𝒆𝒏𝒆𝒔𝒊𝒔-𝑩𝒐𝒕 - 𝑪𝒉𝒂𝒏𝒏𝒆𝒍'
+let imagenes = ["https://iili.io/dsvLXUJ.md.png",
+"https://iili.io/dsvpB1I.md.png",
+"https://iili.io/dsvyI3P.md.png",
+"https://iili.io/ds8JsVf.md.png",
+"https://iili.io/ds83u8N.md.png",
+"https://iili.io/ds8FYJV.md.png",
+"https://iili.io/ds8fK92.md.png"]
+
+let icono = imagenes[Math.floor(Math.random() * imagenes.length)]
+
 
 global.rcanal = {
  contextInfo: {
      	isForwarded: true,
     forwardedNewsletterMessageInfo: {
-      newsletterJid: "120363319490414132@newsletter",
+      newsletterJid: "120363220939514640@newsletter",
       serverMessageId: 100,
-      newsletterName: namechannel,
+      newsletterName: name,
    }, 
    externalAdReply: {
     showAdAttribution: true, 
@@ -18,7 +28,7 @@ global.rcanal = {
     mediaUrl: null, 
     description: null, 
     previewType: "PHOTO", 
-    thumbnailUrl: "https://i.pinimg.com/originals/79/69/bd/7969bd5faa4d1fa5193d0e30bb4e974c.jpg", 
+    thumbnailUrl: icono, 
     sourceUrl: canal, 
     mediaType: 1, 
     renderLargerThumbnail: false }, 
@@ -26,34 +36,14 @@ global.rcanal = {
     }
 
 
-/* global.rcanal = {
+ global.fake = {
     contextInfo: {
     	isForwarded: true,
     forwardedNewsletterMessageInfo: {
-      newsletterJid: "120363319490414132@newsletter",
+      newsletterJid: "120363220939514640@newsletter",
       serverMessageId: 100,
-      newsletterName: namechannel,
+      newsletterName: name,
     },
     },
-  }*/
-
- global.adReply = {
-	    contextInfo: { 
-             forwardingScore: 9999, 
-                 isForwarded: false, 
-                    externalAdReply: {
-				    showAdAttribution: true,
-					title: botname,
-					body: textbot,
-					mediaUrl: null,
-					description: null,
-					previewType: "PHOTO",
-					thumbnailUrl: "https://i.ibb.co/8mdHFVK/file.jpg",
-                    thumbnail: img,
-		           sourceUrl: canal,
-		           mediaType: 1,
-                   renderLargerThumbnail: true
-				}
-			}
-		}
+  }
 }
