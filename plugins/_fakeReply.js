@@ -2,13 +2,13 @@ import fetch from 'node-fetch'
 
 export async function before(m, { conn }) {
 let name = '𝑮𝒆𝒏𝒆𝒔𝒊𝒔-𝑩𝒐𝒕 - 𝑪𝒉𝒂𝒏𝒏𝒆𝒍'
-let imagenes = ["https://iili.io/dsvLXUJ.md.png",
-"https://iili.io/dsvpB1I.md.png",
-"https://iili.io/dsvyI3P.md.png",
-"https://iili.io/ds8JsVf.md.png",
-"https://iili.io/ds83u8N.md.png",
-"https://iili.io/ds8FYJV.md.png",
-"https://iili.io/ds8fK92.md.png"]
+let imagenes = ["https://iili.io/dtLKOBI.md.jpg",
+"https://iili.io/dtLBx1I.md.jpg",
+"https://iili.io/dtLCWFI.md.jpg",
+"https://iili.io/dtLnzRn.md.jpg",
+"https://iili.io/dtLoqzb.md.jpg",
+"https://iili.io/dtLx2GR.md.jpg",
+"https://iili.io/dtLxM6Q.md.jpg"]
 
 let icono = imagenes[Math.floor(Math.random() * imagenes.length)]
 
