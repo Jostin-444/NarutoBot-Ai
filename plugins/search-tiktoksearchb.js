@@ -69,7 +69,7 @@ let handler = async(m, { conn, usedPrefix, command, text }) => {
             text: `Resultados de *${text}*`
           }),
           footer: proto.Message.InteractiveMessage.Footer.create({
-            text: 'Tiktok Search By KenisawaDev',
+            text: 'Tiktok Search By ム 𝐉𝐎𝐒𝐓𝐈𝐍-444 ㋰',
           }),
           header: proto.Message.InteractiveMessage.Header.create({
             hasMediaAttachment: false
