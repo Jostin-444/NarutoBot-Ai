@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 
 export async function before(m, { conn }) {
-let name = '𝑮𝒆𝒏𝒆𝒔𝒊𝒔-𝑩𝒐𝒕 - 𝑪𝒉𝒂𝒏𝒏𝒆𝒍'
+let name = '𝑵𝒂𝒓𝒖𝒕𝒐𝑩𝒐𝒕- 𝑴𝑫 - 𝑪𝒉𝒂𝒏𝒏𝒆𝒍'
 let imagenes = ["https://iili.io/dtLKOBI.md.jpg",
 "https://iili.io/dtLBx1I.md.jpg",
 "https://iili.io/dtLCWFI.md.jpg",
