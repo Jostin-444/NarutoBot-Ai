@@ -29,7 +29,7 @@ say('NarutoBot-Ai', {
   gradient: ['red', 'magenta']
 })
 
-say(`By ム 𝐉𝐎𝐒𝐓𝐈𝐍-444 ㋰`, {
+say(`By Jostin-444`, {
   font: 'console',
   align: 'center',
   gradient: ['red', 'magenta']
