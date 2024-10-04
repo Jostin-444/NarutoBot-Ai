@@ -23,13 +23,13 @@ async function displayImage() {
       console.error('Error displaying image:', error);
    }
 }
-say('Elaina Ai', {
+say('NarutoBot-Ai', {
   font: 'chrome',
   align: 'center',
   gradient: ['red', 'magenta']
 })
 
-say(`By KenisawaDev`, {
+say(`By ム 𝐉𝐎𝐒𝐓𝐈𝐍-444 ㋰`, {
   font: 'console',
   align: 'center',
   gradient: ['red', 'magenta']
