@@ -63,7 +63,7 @@ const defaultMenu = {
 │ ◦ *Rutina:* %muptime 
 └ ◦ *Database:*  %totalreg
 
-▣╾───────❤───────╼▣
+▣╾───────🧡───────╼▣
  %readmore
 \t\t\t_*LISTA DE MENÚS*_
 `.trimStart(),
