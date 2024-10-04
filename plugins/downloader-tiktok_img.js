@@ -10,7 +10,7 @@ let handler = async (m, { conn, text, args, command, usedPrefix }) => {
     // Cambie la URL principal y la URL de respaldo según sea necesario
     let mainUrl = `https://dlpanda.com/id?url=${text}&token=G7eRpMaa`;
     let backupUrl = `https://dlpanda.com/id?url=${text}&token51=G32254GLM09MN89Maa`;
-    let creator = 'KenisawaDev';
+    let creator = 'KanisawaDev';
 
     try {
         let response = await axios.get(mainUrl, {
