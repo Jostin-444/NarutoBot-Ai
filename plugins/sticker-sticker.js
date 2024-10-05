@@ -20,12 +20,12 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 		} else if (/video/g.test(mime)) {
 			if ((q.msg || q).seconds > 10) throw 'Maximo 10 seconds!'
 			let img = await q.download?.()
-			//conn.reply(m.chat, wait, m, rcanal)
+conn.reply(m.chat, wait, m, rcanal)
 			stiker = await mp4ToWebp(img, { pack: global.packname, author: global.author })
 		} else if (args[0] && isUrl(args[0])) {
-			//m.reply(wait)
+conn.reply(m.chat, wait, m, rcanal)
 			stiker = await createSticker(false, args[0], '', global.packname, 20)
-		} else throw conn.reply( conn.reply(m.chat, wait, m, rcanal, `🚩 Responda a una *Imagen* o *Vídeo.*`, m, rcanal) 
+		} else throw conn.reply(m.chat, wait, m, rcanal, `🚩 Responda a una *Imagen* o *Vídeo.*`, m, rcanal) 
 	} catch (e) {
 		console.log(e)
 		stiker = e
