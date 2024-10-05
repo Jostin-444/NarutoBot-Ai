@@ -31,8 +31,8 @@ let handler = async (m, { args, command, usedPrefix }) => {
 
     m.reply(`❖ ${media.length} Byte(s)
 
-❖ (Archivo subido a ImgBB)
-❖ *URL:* ${link}
+✶ (Archivo subido a ImgBB)
+ꦽ *URL:* ${link}
     `);
   } catch (error) {
     console.error('Error al subir el archivo:', error.message);
