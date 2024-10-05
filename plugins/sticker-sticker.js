@@ -25,7 +25,7 @@ conn.reply(m.chat, wait, m, rcanal)
 		} else if (args[0] && isUrl(args[0])) {
 conn.reply(m.chat, wait, m, rcanal)
 			stiker = await createSticker(false, args[0], '', global.packname, 20)
-		} else throw conn.reply(m.chat, wait, m, rcanal, `🚩 Responda a una *Imagen* o *Vídeo.*`, m, rcanal) 
+	 } else throw conn.reply(m.chat, `🚩 Responda a una *Imagen* o *Vídeo.*`, m, rcanal)
 	} catch (e) {
 		console.log(e)
 		stiker = e
