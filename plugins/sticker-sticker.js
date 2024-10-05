@@ -116,4 +116,5 @@ async function mp4ToWebp(file, stickerMetadata) {
 	})
 	return Buffer.from((await res.text()).split(';base64,')[1], 'base64')
 }
+× conn.reply(m.chat, wait, m, rcanal)
 
