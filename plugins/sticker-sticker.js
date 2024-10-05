@@ -25,7 +25,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 		} else if (args[0] && isUrl(args[0])) {
 			//m.reply(wait)
 			stiker = await createSticker(false, args[0], '', global.packname, 20)
-		} else throw m.reply(`🚩 Responda a una *Imagen* o *Vídeo.*`)
+		} else throw conn.reply( conn.reply(m.chat, wait, m, rcanal, `🚩 Responda a una *Imagen* o *Vídeo.*`, m, rcanal) 
 	} catch (e) {
 		console.log(e)
 		stiker = e
