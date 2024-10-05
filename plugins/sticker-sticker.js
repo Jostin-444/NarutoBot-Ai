@@ -11,7 +11,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 		let mime = (q.msg || q).mimetype || q.mediaType || ''
 		if (/webp/g.test(mime)) {
 			let img = await q.download?.()
-			//m.reply(wait)
+			//conn.reply(m.chat, wait, m, rcanal)
 			stiker = await addExif(img, global.packname || '', global.author || '')
 		} else if (/image/g.test(mime)) {
 			let img = await q.download?.()
