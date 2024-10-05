@@ -1,8 +1,33 @@
-import Starlights from '@Jostin_max.bot/Scraper'
+import Starlights from '@StarlightsTeam/Scraper'
 import fetch from 'node-fetch'
+const { proto, generateWAMessageFromContent } = (await import('@whiskeysockets/baileys')).default;
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-if (!text) return conn.reply(m.chat,`*🚩 Ingrese su petición*\n*🪼 Ejemplo de uso:* ${usedPrefix + command} como hacer estrella de papel`, m, rcanal)
+       const ej_kenisawa = () => {
+        let txt_ejemplo = `*🚩 Ingrese su petición*\n*🪼 Ejemplo de uso:* ${usedPrefix + command} como hacer estrella de papel`;
+        let ejemplo = `${usedPrefix + command} como hacer estrella de papel`
+    let buttonMessage = generateWAMessageFromContent(m.chat, {
+        viewOnceMessage: {
+            message: {
+                interactiveMessage: proto.Message.InteractiveMessage.create({
+                    body: { text: txt_ejemplo },
+                    nativeFlowMessage: {
+                        buttons: [{
+                "name": "cta_copy",
+                "buttonParamsJson": JSON.stringify({
+                "display_text": "Copiar Ejemplo",
+                "copy_code": `${ejemplo}`
+                })
+              },],
+                    }
+                })
+            }
+        }
+    }, { quoted: m });
+
+    conn.relayMessage(m.chat, buttonMessage.message, {});
+        }
+if (!text) return ej_kenisawa()
 await m.react('💬')
 try {
 let { msg } = await Starlights.openAi(text)
