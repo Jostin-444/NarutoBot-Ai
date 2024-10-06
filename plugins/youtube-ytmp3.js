@@ -12,9 +12,9 @@ let { title, size, quality, thumbnail, dl_url } = await Starlights.ytmp3(args[0]
 let img = await (await fetch(`${thumbnail}`)).buffer()
 if (size.split('MB')[0] >= limit) return star.reply(m.chat, `El archivo pesa mas de ${limit} MB, se canceló la Descarga.`, m, rcanal).then(_ => m.react('✖️'))
 	let txt = '`乂  Y O U T U B E  -  M P 3`\n\n'
-       txt += `	✩   *Titulo* : ${title}\n`
-       txt += `	✩   *Calidad* : ${quality}\n`
-       txt += `	✩   *Tamaño* : ${size}\n\n`
+       txt += `	✦   *𝘛𝘪𝘵𝘶𝘭𝘰* : ${title}\n`
+       txt += `	✦   *𝘊𝘢𝘭𝘪𝘥𝘢𝘥* : ${quality}\n`
+       txt += `	✦   *𝘛𝘢𝘮𝘢ñ𝘰* : ${size}\n\n`
        txt += `> *- ↻ El audio se esta enviando espera un momento, soy lenta. . .*`
 await star.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null, rcanal)
 await star.sendMessage(m.chat, { audio: { url: dl_url }, fileName: title + '.mp3', mimetype: 'audio/mp4' }, { quoted: m })
@@ -24,7 +24,7 @@ await m.react('✖️')
 }}
 handler.help = ['ytmp3 *<link yt>*']
 handler.tags = ['downloader']
-handler.command = ['ytmp3', 'yta', 'fgmp3']
+handler.command = ['ytmp3', 'yta', 'fgmp3','yutump3']
 //handler.limit = 1
 handler.register = true 
 
