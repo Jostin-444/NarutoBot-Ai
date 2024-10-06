@@ -51,9 +51,9 @@ const defaultMenu = {
  – *ᴜ s ᴇ ʀ*
 
 ┏ ◦ *Nombre:* %name
-├ ◦ *Eris:* %limit
-├ ◦ *Nivel:* %level [ %xp4levelup Xp Para Subir De Nivel]
-├ ◦ *Xp:* %exp / %maxexp
+┣ ◦ *Eris:* %limit
+┣ ◦ *Nivel:* %level [ %xp4levelup Xp Para Subir De Nivel]
+┣ ◦ *Xp:* %exp / %maxexp
 ┗ ◦ *TotalXp:* %totalexp
  
   – *ɪ ɴ ғ ᴏ*
@@ -68,9 +68,9 @@ const defaultMenu = {
  %readmore
 \t\t\t_*LISTA DE MENÚS*_
 `.trimStart(),
-  header: '┏▬▬▬▬▬▬「 *%category* 」',
+  header: '┏━━━━━━━╾「 *%category* 」',
   body: '> %cmd %islimit %isPremium\n',
-  footer: '┗▬▬▬▬▬▬▬▬▬▬▬',
+  footer: '┗━━━━━━━━━━━━━━╾',
   after: `© ${textbot}`,
 }
 
