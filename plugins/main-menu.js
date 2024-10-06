@@ -50,27 +50,27 @@ const defaultMenu = {
 
  – *ᴜ s ᴇ ʀ*
 
-┌ ◦ *Nombre:* %name
-│ ◦ *Eris:* %limit
-│ ◦ *Nivel:* %level [ %xp4levelup Xp Para Subir De Nivel]
-│ ◦ *Xp:* %exp / %maxexp
-└ ◦ *TotalXp:* %totalexp
+┏ ◦ *Nombre:* %name
+▎ ◦ *Eris:* %limit
+▎ ◦ *Nivel:* %level [ %xp4levelup Xp Para Subir De Nivel]
+▎ ◦ *Xp:* %exp / %maxexp
+┗ ◦ *TotalXp:* %totalexp
  
   – *ɪ ɴ ғ ᴏ*
  
-┌ ◦ *Modo:* %mode
-│ ◦ *Prefijo:* [ *%_p* ]
-│ ◦ *Rutina:* %muptime 
-└ ◦ *Database:*  %totalreg
+┏ ◦ *Modo:* %mode
+▎ ◦ *Prefijo:* [ *%_p* ]
+▎ ◦ *Rutina:* %muptime 
+┗ ◦ *Database:*  %totalreg
      
    ⏤͟͟͞͞★𝐍𝐚𝐫𝐮𝐭𝐨𝐁𝐨𝐭-𝐀𝐢ꗄ➺
 ◆━━━━━━━▣✦▣━━━━━━━━◆ 
  %readmore
 \t\t\t_*LISTA DE MENÚS*_
 `.trimStart(),
-  header: '┏───「 *%category* 」',
+  header: '┏▬▬▬▬▬▬「 *%category* 」',
   body: '> %cmd %islimit %isPremium\n',
-  footer: '┗──────────━',
+  footer: '┗▬▬▬▬▬▬▬▬▬▬▬▬▬━',
   after: `© ${textbot}`,
 }
 
