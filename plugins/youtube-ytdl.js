@@ -45,7 +45,7 @@ let handler = async (m, { conn, args, command }) => {
       txt += `	✩   *Título* : ${title}\n`
       txt += `	✩   *Tamaño* : ${size}\n`
       txt += `	✩   *Calidad* : ${selectedResolution}\n\n`
-      txt += `*- ↻ El video se esta enviando espera un momento, soy lenta. . .*`
+      txt += `*- ↻ El video se esta enviando espera un momento, soy lento. . .*`
 conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null, rcanal)
 await conn.sendFile(m.chat, dlUrl, title + '.mp4', `
 *🎋 Título* : ${title}
