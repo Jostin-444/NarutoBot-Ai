@@ -46,12 +46,12 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
     let totalreg = Object.keys(global.db.data.users).length;
     let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length;
 
-    m.react("🤍");
+    m.react("🧡");
     let menu = ``;
 
     let txt = ""
-    txt += '⍣ `ᴄʀᴇᴀᴅᴏʀ ::`' + ` Angel-OFC\n`;
-    txt += '⍣ `ʙᴏᴛ ::`' + ` GenesisBot-MD\n`;
+    txt += '⍣ `ᴄʀᴇᴀᴅᴏʀ ::`' + ` Jostin-444\n`;
+    txt += '⍣ `ʙᴏᴛ ::`' + ` NarutoBot-Ai\n`;
     txt += '⍣ `ꜰᴇᴄʜᴀ ::`' + ` ${fecha}\n`;
     txt += '⍣ `ᴠᴇʀꜱɪᴏɴ ::`' + ` ${vs}\n`;
 //    txt += ⍣ `${sbot}\n`;
@@ -74,7 +74,7 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
                 id: `.reg ꪶ͢ɢᴇɴᴇs᭨s ꫂ❅ۣ .18`,
             },
             {
-                header: "፝͡ৎ𝙈𝙀𝙉𝙐 𝘾𝙊𝙈𝙋𝙇𝙀𝙏𝙊 ╎🤍",
+                header: "፝͡ৎ𝙈𝙀𝙉𝙐 𝘾𝙊𝙈𝙋𝙇𝙀𝙏𝙊 ╎🧡",
                 title: "",
                 description: `𝘮𝘶𝘦𝘴𝘵𝘳𝘢 𝘦𝘭 𝘮𝘦𝘯𝘶 𝘤𝘰𝘮𝘱𝘭𝘦𝘵𝘰`,
                 id: `.allmenu`,
