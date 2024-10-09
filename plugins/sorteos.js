@@ -1,139 +1,42 @@
-let fs = require('fs');
+/*---------------------------------------------------------------------------------------
+  🍀 •  𝘉𝘠 𝘑𝘖𝘚𝘛𝘐𝘕
+-----------------------------------------------------------------------------------------*/
+import util from 'util'
+import path from 'path'
+let user = a => '@' + a.split('@')[0]
+async function handler(m, { groupMetadata, command, conn, text, usedPrefix}) {
+if (!text) throw `𝙀𝙟𝙚𝙢𝙥𝙡𝙤 𝙙𝙚 𝙪𝙨𝙤:\n.𝙨𝙤𝙧𝙩𝙚𝙤 𝙩𝙚𝙭𝙩𝙤`
+let ps = groupMetadata.participants.map(v => v.id)
+let a = ps.getRandom()
+let b = ps.getRandom()
+let k = Math.floor(Math.random() * 70);
+let x = `${pickRandom(['ㅤ'])}`
+let l = Math.floor(Math.random() * x.length);
+let vn = ``
+let top = `*${user(a)}* _𝙚𝙨𝙩𝙖𝙨 𝙙𝙚 𝙨𝙪𝙚𝙧𝙩𝙚 , 𝙖𝙘𝙖𝙗𝙖 𝙙𝙚 𝙜𝙖𝙣𝙖𝙧 ${text} 😼💪🏻_
+𝐌𝐀𝐗 𝐁𝐎𝐓-𝐌𝐃 𝐓𝐞 𝐃𝐚 𝐒𝐮𝐞𝐫𝐭𝐞 🤖💫
 
-let giveawayData = JSON.parse(fs.readFileSync('./sorteo.json', 'utf-8') || '{}');
+`
+let txt = '';
+let count = 0;
+for (const c of top) {
+    await new Promise(resolve => setTimeout(resolve, 15));
+    txt += c;
+    count++;
 
-let saveGiveawayData = () => {
-    fs.writeFileSync('./sorteo.json', JSON.stringify(giveawayData, null, 2));
-};
-
-let parseCustomTime = (timeString) => {
-    let timeUnits = {
-        s: 1000,
-        m: 60 * 1000,
-        h: 60 * 60 * 1000
-    };
-
-    let totalMs = 0;
-    let regex = /(\d+)([smj])/g;
-    let match;
-
-    while ((match = regex.exec(timeString)) !== null) {
-        let value = parseInt(match[1]);
-        let unit = match[2];
-        if (timeUnits[unit]) {
-            totalMs += value * timeUnits[unit];
-        }
+    if (count % 10 === 0) {
+        conn.sendPresenceUpdate('composing' , m.chat);
     }
-
-    return totalMs;
-};
-
-let handler = async (m, { conn, text, usedPrefix, command }) => {
-    if (command === 'reclamar') {
-        if (!text) throw `Formato incompleto!\n\nEjemplo:\n${usedPrefix + command} premio|participantes|tiempo\n\nUso:\n${usedPrefix + command} iPhone 14|50|1h30m2s`;
-
-        let [price, maxParticipants, time] = text.split('|');
-        if (!price || !maxParticipants || !time) throw `Por favor, introduzca todos los parámetros correctamente!`;
-
-        maxParticipants = parseInt(maxParticipants);
-        if (isNaN(maxParticipants) || maxParticipants <= 0) throw `Los participantes no pueden quedar en 0!`;
-
-        let duration = parseCustomTime(time);
-        if (duration <= 0) throw `Duracion no valida, usa el ejemplo!`;
-        let endTime = Date.now() + duration;
-
-        let giveawayId = m.quoted?.id || m.key.id;
-        let groupId = m.chat;
-
-        giveawayData[groupId] = {
-            giveawayId,
-            host: m.sender,
-            price,
-            maxParticipants,
-            duration,
-            endTime,
-            participants: [],
-            isEnded: false
-        };
-
-        saveGiveawayData();
-
-        conn.reply(m.chat,
-            `🎉 SORTEO 🎉\n\n` +
-            `! Premio: ${price}\n` +
-            `! Maximo de participantes: ${maxParticipants}\n` +
-            `! Duración: ${time}\n` +
-            `! Termina en: ${new Date(endTime).toLocaleString()}\n` +
-            `! Anfitrión: @${m.sender.split('@')[0]}\n` +
-            `! ID de reclamo: ${giveawayId}\n\n` +
-            `! Nota: escribe .enter para entrar al sorteo`,
-            m, { mentions: [m.sender] }
-        );
-
-        setTimeout(() => endGiveaway(groupId, conn, 'timeout'), duration);
-    }
-
-    if (command === 'enter') {
-        if (!m.quoted || !m.quoted.text) throw `Responde al mensaje del sorteo!`;
-
-        let quotedText = m.quoted.text;
-        let giveawayIdMatch = quotedText.match(/ID de reclamo: (\S+)/);
-        if (!giveawayIdMatch) throw `Ingresa la id correcta y responde el mensaje!`;
-
-        let giveawayId = giveawayIdMatch[1];
-        let groupId = m.chat;
-        let giveaway = giveawayData[groupId];
-
-        if (!giveaway || giveaway.giveawayId !== giveawayId) throw `No hay sorteos aún!`;
-        if (giveaway.isEnded) throw `El sorteo ya acabó!`;
-        if (giveaway.participants.includes(m.sender)) throw `Ya reclamaste esto!`;
-
-        giveaway.participants.push(m.sender);
-        saveGiveawayData();
-
-        conn.reply(m.chat, `Llegaste al sorteo!`, m);
-
-        if (giveaway.participants.length >= giveaway.maxParticipants) {
-            endGiveaway(groupId, conn, 'participants');
-        }
-    }
-};
-
-let endGiveaway = (groupId, conn, reason) => {
-    let giveaway = giveawayData[groupId];
-    if (!giveaway || giveaway.isEnded) return;
-
-    giveaway.isEnded = true;
-
-    if (giveaway.participants.length > 0) {
-        let winner = giveaway.participants[Math.floor(Math.random() * giveaway.participants.length)];
-        saveGiveawayData();
-
-        conn.reply(groupId,
-            `🎉 SORTEO TERMINADO 🎉\n\n` +
-            `! Ganador: @${winner.split('@')[0]}\n` +
-            `! Premio: ${giveaway.price}\n` +
-            `! Anfitrión: @${giveaway.host.split('@')[0]}\n\n` +
-            `! Nota: ¡Felicitaciones al ganador! Ponte en contacto con el anfitrión para reclamar la recompensa.`,
-            null, { mentions: [winner, giveaway.host] }
-        );
-    } else if (reason === 'timeout') {
-        conn.reply(groupId,
-            `⏰ Tiempo acabado, SORTEO TERMINADO ⏰\n\n` +
-            `! Premio: ${giveaway.price}\n` +
-            `! Anfitrión: @${giveaway.host.split('@')[0]}\n\n` +
-            `! Nota: El sorteo ha finalizado debido a que el tiempo se acaba. No hay ganadores.`,
-            null, { mentions: [giveaway.host] }
-        );
-    }
-
-    saveGiveawayData();
-};
-
+}
+    await conn.sendMessage(m.chat, { text: txt.trim(), mentions: conn.parseMention(txt) }, {quoted: m, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100} );
+//m.reply(top, null, { mentions: [a, b, c, d, e, f, g, h, i, j]})
+conn.sendFile(m.chat, vn, '🏆𝐀𝐂𝐄𝐑𝐐𝐔𝐄𝐒𝐄 𝐀 𝐑𝐄𝐂𝐋𝐀𝐌𝐀𝐑 𝐒𝐔 𝐏𝐑𝐄𝐌𝐈𝐎🏅', null, m, true, {
+type: 'audioMessage',
+ptt: true })}
+handler.help = handler.command = ['sorteo']
+handler.tags = ['fun']
 handler.group = true
-handler.admin = true
-handler.help = ['reclamar']
-handler.tags = ['group']
-handler.command = /^(reclamar|enter)$/i;
-
-module.exports = handler;
+handler.limit = 0
+export default handler
+function pickRandom(list) {
+return list[Math.floor(Math.random() * list.length)]}
