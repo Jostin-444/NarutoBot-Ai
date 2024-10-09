@@ -14,8 +14,8 @@ let handler = async (m) => {
 ▢ *رابط :* ${link}
   `)
 }
-handler.help = ['tourl']
+handler.help = ['tourl3']
 handler.tags = ['tools']
-handler.command = ['upload', 'tourl','لرابط']
+handler.command = ['upload3', 'tourl3']
 
 export default handler
