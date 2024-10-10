@@ -10,7 +10,7 @@ import axios from 'axios'
 
 global.owner = [
   ['50242073893', 'Jostin', true]
-  ['51902855352', 'Giovanni-OFC', true]
+]
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
