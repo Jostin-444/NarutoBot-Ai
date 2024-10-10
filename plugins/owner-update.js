@@ -1,16 +1,14 @@
 import { execSync } from 'child_process'
+let handler = async (m, { conn, text }) => {
+await m.react('🕓')
+if (conn.user.jid == conn.user.jid) {
+let stdout = execSync('git pull' + (m.fromMe && text ? ' ' + text : ''))
+await conn.reply(m.chat, stdout.toString(), m)
+await m.react('✅')
+}}
+handler.help = ['update']
+handler.tags = ['owner']
+handler.command = ['update', 'actualizar', 'fix', 'fixed'] 
+handler.rowner = true
 
-var handler = async (m, { conn, text }) => {
-
-m.react('🚀') 
-try {
-
-const stdout = execSync('git pull' + (m.fromMe && text ? ' ' + text : ''));
-let messager = stdout.toString()
-
-if (messager.includes('☘️ Ya estoy actualizada.')) messager = '☘️ Ya estoy actualizada a la última versión.'
-
-if (messager.includes('💫 Actualizando.')) messager = '✨️ Procesando, espere un momento mientras me actualizo.\n\n' + stdout.toString()
-conn.reply(m.chat, messager, m, rcanal,)
-
-}
+export default handler
