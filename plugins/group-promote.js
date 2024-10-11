@@ -24,7 +24,7 @@ await m.react('✅')
 }}
 handler.help = ['promote *@user*']
 handler.tags = ['group']
-handler.command = ['promote', 'promover'] 
+handler.command = ['promote', 'promover', 'daradmin'] 
 handler.group = true
 handler.admin = true
 handler.botAdmin = true
