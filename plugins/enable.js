@@ -47,6 +47,15 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.antiLink = isEnable
       break
+
+      case 'antiprivado':
+      isAll = true
+      if (!isROwner) {
+      global.dfail('rowner', m, conn)
+      throw false
+      }
+      bot.antiPrivate = isEnable
+      break
       
       case 'nsfw':
       case 'modohorny':
