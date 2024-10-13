@@ -1,4 +1,4 @@
-import { URL_REGEX } from '@adiwajshing/baileys'
+import { URL_REGEX } from '@whiskeysockets/baileys'
 import { fileTypeFromBuffer } from 'file-type'
 import { Pixiv } from '@ibaraki-douji/pixivts'
 const pixiv = new Pixiv()
