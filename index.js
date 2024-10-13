@@ -8,28 +8,19 @@ import { createInterface } from 'readline'
 import yargs from 'yargs'
 import chalk from 'chalk'
 import { promises as fsPromises } from 'fs'
-import terminalImage from 'terminal-image'
 
 let __dirname = dirname(fileURLToPath(import.meta.url))
 let require = createRequire(__dirname)
 let { say } = cfonts
 let rl = createInterface(process.stdin, process.stdout)
-async function displayImage() {
-   try {
-      const imagePath = join(__dirname, 'storage','img', 'avatar_contact.png'); // Path de imagen 
-      const image = await terminalImage.file(imagePath);
-      console.log(image);
-   } catch (error) {
-      console.error('Error displaying image:', error);
-   }
-}
-say('NarutoBot-Ai', {
+
+say('Samatoki Ai', {
   font: 'chrome',
   align: 'center',
   gradient: ['red', 'magenta']
 })
 
-say(`By Jostin-444`, {
+say(`By Sport Team`, {
   font: 'console',
   align: 'center',
   gradient: ['red', 'magenta']
@@ -90,4 +81,4 @@ async function start(files) {
   }
 }
 
-start(['naruto.js'])
+start(['starlights.js'])
