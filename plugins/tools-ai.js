@@ -1,6 +1,6 @@
 import Starlights from '@StarlightsTeam/Scraper'
 import fetch from 'node-fetch'
-const { proto, generateWAMessageFromContent } = (await import('@whiskeysockets/baileys')).default;
+const { proto, generateWAMessageFromContent } = (await import('@adiwajshing/baileys')).default;
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
        const ej_kenisawa = () => {
