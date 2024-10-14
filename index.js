@@ -14,7 +14,7 @@ let require = createRequire(__dirname)
 let { say } = cfonts
 let rl = createInterface(process.stdin, process.stdout)
 
-say('Samatoki Ai', {
+say('NarutoBot-Ai', {
   font: 'chrome',
   align: 'center',
   gradient: ['red', 'magenta']
