@@ -2,7 +2,7 @@
 	"name": "Naruto Ai",
 	"version": "6.0.0",
 	"description": "Simple WhatsApp Bot Multi Device",
-	"main": "starlights.js",
+	"main": "naruto.js",
 	"type": "module",
 	"directories": {
 		"lib": "lib",
