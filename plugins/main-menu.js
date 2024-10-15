@@ -48,29 +48,34 @@ const defaultMenu = {
   before: `
 > 「 ${textbot} あ⁩ 」\n
 
- – *ᴜ s ᴇ ʀ*
-
-┏ ◦ *Nombre:* %name
-┣ ◦ *Eris:* %limit
-┣ ◦ *Nivel:* %level [ %xp4levelup Xp Para Subir De Nivel]
-┣ ◦ *Xp:* %exp / %maxexp
-┗ ◦ *TotalXp:* %totalexp
- 
-  – *ɪ ɴ ғ ᴏ*
- 
-┏ ◦ *Modo:* %mode
-┣ ◦ *Prefijo:* [ *%_p* ]
-┣ ◦ *Rutina:* %muptime 
-┗ ◦ *Database:*  %totalreg
+╔──────¤◎¤──────╗
+┋#     ✧ *𝔘  Ƨ Ξ Я  ‹‹❑ౄ*
+╚──────¤◎¤──────╝
+╭━─━─━─≪𖣘≫─━─━─━╮
+┃✰ ➬ *Nombre:* %name
+┃✰ ➬ *Eris:* %limit
+┃✰ ➬ *Nivel:* %level [ %xp4levelup Xp Para Subir De Nivel]
+┃✰ ➬ *Xp:* %exp / %maxexp
+┃✰ ➬ *TotalXp:* %totalexp
+ ╰━─━─━─≪𖣘≫─━─━─━╯
+╔──────¤◎¤──────╗
+┋#    ✦   *𝐈 ᜰ ₣ Օ  ‹‹❑ౄ*
+╚──────¤◎¤──────╝
+╭━─━─━─≪𖣘≫─━─━─━╮
+┃✰ ➬ *Modo:* %mode
+┃✰ ➬ *Prefijo:* [ *%_p* ]
+┃✰ ➬ *Rutina:* %muptime 
+┃✰ ➬ *Database:*  %totalreg
+╰━─━─━─≪𖣘≫─━─━─━╯
      
    ⏤͟͟͞͞★𝐍𝐚𝐫𝐮𝐭𝐨𝐁𝐨𝐭-𝐀𝐢ꗄ➺
 ◆━━━━━━━▣✦▣━━━━━━━━◆ 
  %readmore
-\t\t\t_*LISTA DE MENÚS*_
+\t\t\t_*Ľł₷ŢȺ ಖε ʍэиบร*_ ﭢ
 `.trimStart(),
-  header: '┏━━━━━━━╾「 *%category* 」',
-  body: '> %cmd %islimit %isPremium\n',
-  footer: '┗━━━━━━━━━━━━━━╾',
+  header: '╭═════⊹⊱≼「 *%category* 」≽⊰⊹════•',
+  body: '┃❯ ✧ . %cmd %islimit %isPremium\n',
+  footer: '╰═════⊹⊱≼≽⊰⊹═════╯',
   after: `© ${textbot}`,
 }
 
@@ -177,7 +182,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
  readmore: readMore
    }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    
+
     let pp = 'https://telegra.ph/file/4c3e4b782c82511b3874d.mp4'
     let pp2 = 'https://telegra.ph/file/d8c5e18ab0cfc10511f63.mp4'
     let pp3 = 'https://telegra.ph/file/96e471a87971e2fb4955f.mp4'
@@ -191,9 +196,9 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     let pp11 = 'https://telegra.ph/file/81da492e08bfdb4fda695.mp4'
     let pp12 = 'https://telegra.ph/file/ec8393df422d40f923e00.mp4'
     let pp13 = 'https://telegra.ph/file/ba7c4a3eb7bf3d892b0c8.mp4'
-    let pp14 = 'https://tinyurl.com/ymlqb6ml'
-    let pp15 = 'https://tinyurl.com/ykv7g4zy'
-    let img = 'https://iili.io/dtLoqzb.md.jpg'
+    let pp14 = 'https://i.ibb.co/86nWG5t/Sylph.jpg'
+    let pp15 = 'https://i.ibb.co/86nWG5t/Sylph.jpg'
+    let img = 'https://i.ibb.co/86nWG5t/Sylph.jpg'
     await m.react('✨')
    // await conn.sendMessage(m.chat, { video: { url: [pp, pp2, pp3, pp4, pp5, pp6, pp7, pp8, pp9, pp10, pp11, pp12, pp13, pp14, pp15].getRandom() }, gifPlayback: true, caption: text.trim(), mentions: [m.sender] }, { quoted: estilo })
     await conn.sendFile(m.chat, img, 'thumbnail.jpg', text.trim(), m, null, rcanal)
@@ -207,7 +212,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
 
 handler.help = ['allmenu']
 handler.tags = ['main']
-handler.command = ['menu2', 'help2', 'menú2', 'allmenu'] 
+handler.command = ['allmenu', 'menucompleto', 'menúcompleto', 'menú', 'menu'] 
 handler.register = true 
 export default handler
 
@@ -250,4 +255,4 @@ switch(hour){
   case 22: hour = 'una linda noche 🌙'; break;
   case 23: hour = 'una linda noche 🌃'; break;
 }
-  var greeting = "espero que tengas " + hour;
+  var greeting = "espero que tengas " + hour; 
