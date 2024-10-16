@@ -37,7 +37,7 @@ async function serbot() {
       printQRInTerminal: true,
       logger: pino({ level: "fatal" }),
       auth: state,
-      browser: [`【 ✯ Ai Hoshino - MD ✰ 】`, "IOS", "4.1.0"],
+      browser: [`【 ✯ Naruto Bot - Ai ✰ 】`, "IOS", "4.1.0"],
     };
 
     let conn = makeWASocket(connectionOptions)
