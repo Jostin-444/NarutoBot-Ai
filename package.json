@@ -1,5 +1,5 @@
 {
-        "name": "Elaina Ai",
+        "name": "Naruto Ai",
         "version": "6.0.0",
         "description": "Simple WhatsApp Bot Multi Device",
         "main": "elaina.js",
@@ -25,16 +25,16 @@
                 "MD",
                 "baileys-md"
         ],
-        "homepage": "https://github.com/MauroAzcurra/Elaina-Ai",
+        "homepage": "https://github.com/Jostin-444/NarutoBot-Ai",
         "author": {
-                "name": "MauroAzcurra"
+                "name": "Jostin-444"
         },
         "repository": {
                 "type": "git",
-                "url": "git+https://github.com/MauroAzcurra/Elaina-Ai.git"
+                "url": "git+https://github.com/Jostin-444/NarutoBot-Ai.git"
         },
         "bugs": {
-                "url": "https://github.com/MauroAzcurra/Elaina-Ai/issues"
+                "url": "https://github.com/Jostin-444/NarutoBot-Ai/issues"
         },
         "license": "GPL-3.0-or-later",
         "dependencies": {
