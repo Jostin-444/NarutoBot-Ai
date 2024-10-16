@@ -18,7 +18,7 @@
 
 </details>
 
-## TRANKS DANIEL AND TEAM!!
+
 ----
 ### **`👑 PROPIETARIO`**
 <a
