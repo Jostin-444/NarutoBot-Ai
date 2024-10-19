@@ -31,7 +31,7 @@ await m.react('✖️')
 }
 handler.help = ['play2 *<consulta>*']
 handler.tags = ['downloader']
-handler.command = ['play2']
+handler.command = ['play2', 'audio']
 //handler.limit = 1
 handler.register = true 
 
