@@ -1,34 +1,85 @@
-import Starlights from '@StarlightsTeam/Scraper'
 import fetch from 'node-fetch' 
-let limit = 100
-
+import yts from 'yt-search'
+const {
+    proto,
+    generateWAMessageFromContent,
+    prepareWAMessageMedia
+  } = (await import('@adiwajshing/baileys')).default
+  
 let handler = async (m, { conn, args, text, isPrems, isOwner, usedPrefix, command }) => {
- if (!text) throw m.reply(`   ✧Uso: ${usedPrefix}${command} <YouTube Video Link>`);
 
-await m.react('🕓')
-try {
-let { title, duration, size, thumbnail, dl_url } = await Starlights.ytmp3v2(args[0])
-
-let img = await (await fetch(`${thumbnail}`)).buffer()
-if (size.split('MB')[0] >= limit) return conn.reply(m.chat, `El archivo pesa mas de ${limit} MB, se canceló la Descarga.`, m, rcanal).then(_ => m.react('✖️'))
-await conn.sendMessage(m.chat, { audio: { url: dl_url }, fileName: title + '.mp3', mimetype: 'audio/mp4' }, { quoted: m })
-await m.react('✅')
-} catch {
-try {
-let { title, size, quality, thumbnail, dl_url } = await Starlights.ytmp3(args[0])
-
-let img = await (await fetch(`${thumbnail}`)).buffer()
-if (size.split('MB')[0] >= limit) return conn.reply(m.chat, `El archivo pesa mas de ${limit} MB, se canceló la Descarga.`, m, rcanal).then(_ => m.react('✖️'))
-await conn.sendMessage(m.chat, { audio: { url: dl_url }, fileName: title + '.mp3', mimetype: 'audio/mp4' }, { quoted: m })
-await m.react('✅')
-} catch {
-await m.react('✖️')
+if (!text) {
+    return m.reply(`   ✧Uso: ${usedPrefix}${command} Joji Ew`);
+  }
+  try {
+    let results = await yts(text);
+    let tes = results.all[0]
+    let {
+      title,
+      thumbnail,
+      timestamp,
+      views,
+      ago,
+      url
+    } = tes;
+    let texto = "\n*" + title + "*" + "\n\n      *✧ `Duracion`:* " + timestamp + "\n      *✧ `Vistas`:* " + views + "\n      *✧ `Publicado`:* " + ago + "\n";
+    let msg = generateWAMessageFromContent(m.chat, {
+      'viewOnceMessage': {
+        'message': {
+          'messageContextInfo': {
+            'deviceListMetadata': {},
+            'deviceListMetadataVersion': 0x2
+          },
+          'interactiveMessage': proto.Message.InteractiveMessage.create({
+            'body': proto.Message.InteractiveMessage.Body.create({
+              'text': texto
+            }),
+            'footer': proto.Message.InteractiveMessage.Footer.create({
+              'text': wm
+            }),
+            'header': proto.Message.InteractiveMessage.Header.create({
+              'hasMediaAttachment': false,
+              ...(await prepareWAMessageMedia({
+                'image': {
+                  'url': thumbnail
+                }
+              }, {
+                'upload': conn.waUploadToServer
+              }))
+            }),
+            'nativeFlowMessage': proto.Message.InteractiveMessage.NativeFlowMessage.create({
+              'buttons': [{
+                'name': "quick_reply",
+                'buttonParamsJson': "{\"display_text\":\"Audio\",\"id\":\".ytmp3 " + url + "\"}"
+              },{
+                'name': "quick_reply",
+                'buttonParamsJson': "{\"display_text\":\"Video\",\"id\":\".ytmp4 " + url + "\"}"
+              },{
+                      name: "cta_url",
+                      buttonParamsJson: `{"display_text":"Mirar en Youtube","url":"${url}","merchant_url":"https://"}`
+              },{
+                "name": "cta_copy",
+                "buttonParamsJson": JSON.stringify({
+                "display_text": `Copiar Link`,
+                "copy_code": `${url}`
+                })
+              }]
+            })
+          })
+        }
+      }
+    }, {
+      'quoted': m
+    });
+    return await conn.relayMessage(m.chat, msg.message, {});
+  } catch (err) {
+    m.reply("error")
+    console.log(err)
+  }
 }
-}
-}
-handler.help = ['ytmp3 *<link yt>*']
+handler.help = ['play *<consulta>*']
 handler.tags = ['downloader']
-handler.command = ['ytmp3', 'yta', 'fgmp3']
+handler.command = ['play']
 //handler.limit = 1
 handler.register = true 
 
