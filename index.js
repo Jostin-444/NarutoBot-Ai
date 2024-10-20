@@ -81,4 +81,4 @@ async function start(files) {
   }
 }
 
-start(['naruto.js'])
+start(['starlights.js'])
