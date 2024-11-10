@@ -154,6 +154,8 @@ const appledown = {
   }
 }
 
+conn.sendMessage(m.chat, { react: { text: "🕒", key: m.key } });
+
 let dataos = await appleMusic.search(text)
 let dataos2 = await appledown.download(dataos[0].link);
 let { name, albumname, artist, url, thumb, duration, token, download } = dataos2;
@@ -175,7 +177,7 @@ m.reply(`_✧ Enviando ${name} (${artist}/${duration})_\n\n> ${url}`);
       }
     };
     await conn.sendMessage(m.chat, doc, { quoted: m });
-    
+    await conn.sendMessage(m.chat, { react: { text: '✅', key: m.key }})
 }
 handler.help = ['applemusicplay'];
 handler.tags = ['downloader'];
