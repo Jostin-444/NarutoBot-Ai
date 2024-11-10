@@ -145,7 +145,7 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
     await conn.sendListB(m.chat, menu, txt, ` 𓏲᭨ ̤̤֟✧⏤͟͞ू⃪٭ۣۜ ፝͜⁞M͢ᴇɴᴜs۫۫۫۫۫۫۫۫ ᭄፝🤍𑜟꙲𒁑⁩`, [menu.jpg].getRandom(), listSections, estilo);
 };
 
-handler.command = ["menu", "help", "menú"];
+handler.command = ["menu10", "help10", "menú10"];
 
 export default handler;
 
