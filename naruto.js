@@ -95,7 +95,7 @@ global.conn = makeWASocket(connectionOptions)
 
 if (!conn.authState.creds.registered) {
   const phoneNumber = await question(chalk.blue(' Ingresa el número de WhatsApp en el cual estará la Bot\n'))
-  
+
   if (conn.requestPairingCode) {
     let code = await conn.requestPairingCode(phoneNumber);
     code = code?.match(/.{1,4}/g)?.join("-") || code;
@@ -129,8 +129,8 @@ async function clearTmp() {
 }
 
 setInterval(async () => {
-	await clearTmp()
-	console.log(chalk.cyan(`Se limpio la carpeta tmp`))
+        await clearTmp()
+        console.log(chalk.cyan(`Se limpio la carpeta tmp`))
 }, 60000)
 
 async function connectionUpdate(update) {
@@ -231,4 +231,3 @@ Object.freeze(global.reload)
 watch(pluginFolder, global.reload)
 
 await global.reloadHandler()
-//xd
