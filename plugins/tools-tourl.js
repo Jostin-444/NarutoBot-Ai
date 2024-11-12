@@ -1,47 +1,47 @@
-import axios from 'axios';
-import FormData from 'form-data';
-import fs from 'fs';
-import os from 'os';
-import path from 'path';
+import fs from 'fs'
+import FormData from 'form-data'
+import axios from 'axios'
+import fetch from 'node-fetch'
 
-let handler = async (m, { args, command, usedPrefix }) => {
-  let q = m.quoted ? m.quoted : m;
-  let mime = (q.msg || q).mimetype || '';
-  if (!mime) throw `✳️ ${mssg.replyImg}`;
- // if (!args[0]) throw ` \`\`\`[ 🌺 ] Ingresa un texto para guardar la imagen. Ejemplo:\n${usedPrefix + command} Sylph\`\`\``
+let handler = async (m, { conn }) => {
 
-  let media = await q.download();
-  let tempFilePath = path.join(os.tmpdir(), 'Sylph');
-  fs.writeFileSync(tempFilePath, media);
+  let q = m.quoted ? m.quoted : m
+  let mime = (q.msg || q).mimetype || ''
 
-  let form = new FormData();
-  form.append('image', fs.createReadStream(tempFilePath));
+  await m.react('🕒')
+  if (!mime.startsWith('image/')) {
+    return m.reply('Responde a una *Imagen.*')
+  }
 
-  try {
-    let response = await axios.post('https://api.imgbb.com/1/upload?key=1f55ea75f24df783643940f3eacbbc96', form, {
-      headers: {
-        ...form.getHeaders()
-      }
-    });
+  let media = await q.download()
+  let formData = new FormData()
+  formData.append('image', media, { filename: 'file' })
 
-    if (!response.data || !response.data.data || !response.data.data.url) throw '❌ Error al subir el archivo';
-    
-    let link = response.data.data.url;
-    fs.unlinkSync(tempFilePath);
+  let api = await axios.post('https://api.imgbb.com/1/upload?key=10604ee79e478b08aba6de5005e6c798', formData, {
+    headers: {
+      ...formData.getHeaders()
+    }
+  })
 
-    m.reply(`❖ ${media.length} Byte(s)
-
-✶ (Archivo subido a ImgBB)
-ꦽ *URL:* ${link}
-    `);
-  } catch (error) {
-    console.error('Error al subir el archivo:', error.message);
-    throw '❌ Error al subir el archivo a ImgBB';
+  await m.react('✅')
+  if (api.data.data) {
+    let txt = '`I B B  -  U P L O A D E R`\n\n'
+        txt += `*🔖 Titulo* : ${q.filename || 'x'}\n`
+        txt += `*🔖 Id* : ${api.data.data.id}\n`
+        txt += `*🔖 Enlace* : ${api.data.data.url}\n`
+        txt += `*🔖 Directo* : ${api.data.data.url_viewer}\n`
+        txt += `*🔖 Mime* : ${mime}\n`
+        txt += `*🔖 File* : ${q.filename || 'x.jpg'}\n`
+        txt += `*🔖 Extension* : ${api.data.data.image.extension}\n`
+        txt += `*🔖 Delete* : ${api.data.data.delete_url}\n\n`
+        txt += `© By: Max`
+    await conn.sendFile(m.chat, api.data.data.url, 'ibb.jpg', txt, m, null, fake)
+  } else {
+    await m.react('✅')
   }
 }
-
-handler.help = ['tourl'];
-handler.tags = ['tools'];
-handler.command = ['upload', 'tourl'];
-
-export default handler;
+handler.tags = ['convertir']
+handler.help = ['toibb']
+handler.command = /^(tourl|toibb)$/i
+handler.register = true 
+export default handler
