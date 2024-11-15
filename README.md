@@ -6,16 +6,14 @@
 </p>
 
 ---
-### **`TK HOST 📲`**
-<a href="https://dash.tk-joanhost.com"><img src="https://i.ibb.co/pr8TnWJ/SAVE-20240915-183758.jpg" height="125px"></a>
+### **`⛲ Hosting Py:`**
+<a href="https://dahs.hostingpy.shop/"><img src="https://files.catbox.moe/lr92z2.jpg" height="130px"></a>
 
 <details>
- <summary><b>:paperclip: Enlaces Importantes</b></summary>
+ <summary><b>Click para mostrar los links</b></summary>
 
-- **Dashboard:** [`Aquí`](https://dash.tk-joanhost.com)
-- **Panel:** [`Aquí`](https://panel.tk-joanhost.com)
-- **Canal de WhatsApp:** [`Aquí`](https://whatsapp.com/channel/0029VaoZXbk6RGJNYQVP8r27)
-
+- **Dashboard:** [`Aquí`](https://dahs.hostingpy.shop/)
+- **Registrarse:** [`Aquí`](https://dahs.hostingpy.shop/register)
 </details>
 
 
