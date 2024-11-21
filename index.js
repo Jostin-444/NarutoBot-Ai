@@ -20,7 +20,7 @@ say('Naruto', {
   gradient: ['red', 'magenta']
 })
 
-say(`By Sport Team`, {
+say(`By ᘛ「Cᴏᴅᴇʀᴢ Mᴀsᴛᴇʀ」ϟ`, {
   font: 'console',
   align: 'center',
   gradient: ['red', 'magenta']
