@@ -20,7 +20,8 @@ import {makeWASocket, protoType, serialize} from './lib/simple.js'
 import {Low, JSONFile} from 'lowdb'
 import store from './lib/store.js'
 const {proto} = (await import('@whiskeysockets/baileys')).default
-import { PhoneNumberUtil } from 'google-libphonenumber'
+import pkg from 'google-libphonenumber'
+const { PhoneNumberUtil } = pkg
 const phoneUtil = PhoneNumberUtil.getInstance()
 const { makeInMemoryStore, DisconnectReason, useMultiFileAuthState, MessageRetryMap, fetchLatestBaileysVersion, makeCacheableSignalKeyStore } = await import('@whiskeysockets/baileys')
 import readline from 'readline'
