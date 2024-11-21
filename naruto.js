@@ -108,7 +108,6 @@ phoneNumber = `+${phoneNumber}`
     console.log(chalk.magenta(`Su código es:`, code))
   } else {
   }
-}
 
 conn.isInit = false
 conn.well = false
