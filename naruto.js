@@ -97,7 +97,10 @@ global.conn = makeWASocket(connectionOptions)
 
 if (!conn.authState.creds.registered) {
   const phoneNumber = await question(chalk.blue(' Ingresa el número de WhatsApp en el cual estará la Bot\n'))
-
+if (!phoneNumber.startsWith('+')) {
+phoneNumber = `+${phoneNumber}`
+}
+} while (!await isValidPhoneNumber(phoneNumber))
   if (conn.requestPairingCode) {
     let code = await conn.requestPairingCode(phoneNumber);
     code = code?.match(/.{1,4}/g)?.join("-") || code;
@@ -233,3 +236,11 @@ Object.freeze(global.reload)
 watch(pluginFolder, global.reload)
 
 await global.reloadHandler()
+
+async function isValidPhoneNumber(number) {
+try {
+const parsedNumber = phoneUtil.parseAndKeepRawInput(number)
+return phoneUtil.isValidNumber(parsedNumber)
+} catch (error) {
+return false
+}}
