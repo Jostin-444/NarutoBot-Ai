@@ -1,4 +1,4 @@
-import { join, dirname } from 'path'
+yoimport { join, dirname } from 'path'
 import { createRequire } from 'module'
 import { fileURLToPath } from 'url'
 import { setupMaster, fork } from 'cluster'
@@ -81,4 +81,4 @@ async function start(files) {
   }
 }
 
-start(['starcore.js'])
+start([starcore.js])
