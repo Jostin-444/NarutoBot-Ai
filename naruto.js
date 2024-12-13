@@ -176,7 +176,7 @@ const connectionOptions = {
 logger: pino({ level: 'silent' }),
 printQRInTerminal: opcion == '1' ? true : methodCodeQR ? true : false,
 mobile: MethodMobile, 
-browser: opcion == '1' ? ['CrowBot-Ai', 'Edge', '20.0.04'] : methodCodeQR ? ['CrowBot-Ai', 'Edge', '20.0.04'] : ["Ubuntu", "Chrome", "20.0.04"],
+browser: opcion == '1' ? [NarutoBot-Ai', 'Edge', '20.0.04'] : methodCodeQR ? ['CrowBot-Ai', 'Edge', '20.0.04'] : ["Ubuntu", "Chrome", "20.0.04"],
 auth: {
 creds: state.creds,
 keys: makeCacheableSignalKeyStore(state.keys, Pino({ level: "fatal" }).child({ level: "fatal" })),
@@ -280,7 +280,7 @@ process.on('uncaughtException', console.error);
 async function connectSubBots() {
 const subBotDirectory = './YukiJadiBot';
 if (!existsSync(subBotDirectory)) {
-console.log('🌠 CrowBot-Ai no tiene Sub-Bots vinculados.');
+console.log('🦊 NarutoBot-Ai no tiene Sub-Bots vinculados.');
 return;
 }
 
@@ -307,7 +307,7 @@ const mainBotAuthFile = 'YukiSession';
 try {
 const mainBot = await connectionUpdate(mainBotAuthFile);
 global.conns.push(mainBot);
-console.log(chalk.bold.greenBright(`🌠 Ai Crow conectado correctamente.`))
+console.log(chalk.bold.greenBright(`🌠 Naruto Bot conectado correctamente.`))
 
 await connectSubBots();
 } catch (error) {
